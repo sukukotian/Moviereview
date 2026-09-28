@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Review</title>
+</head>
+<body>
+    <h2>Edit your Review</h2>
+    <h3>Movie Id:<%=moviereview.id%></h3>
+    <h3>Username:<%=moviereview.username%></h3>
+    <form method="post" action="/reviews/<%=moviereview.id%>?_method=PATCH">
+       <textarea rows="10" cols="20" name="review"><%=moviereview.review%></textarea>
+       <button>Submit</button>
+    </form>
+</body>
+</html>

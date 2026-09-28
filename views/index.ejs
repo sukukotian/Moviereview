@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Review and Rating</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Movie Review & Rating</h1>
+    <%for(moviereview of Moviereviews){%>
+       <div class="content">
+           <h2>Movie name: <%=moviereview.moviename%></h2>
+           <h3>Username: <%=moviereview.username%></h3>
+           <h4>Rating: <%=moviereview.rating%></h4>
+           <h4>Review: <%=moviereview.review%></h4>
+           <br>
+           <a href="http://localhost:8080/reviews/<%=moviereview.id%>">Show detail</a> &nbsp; &nbsp;
+           <a href="http://localhost:8080/reviews/<%=moviereview.id%>/edit">Edit</a>
+           <form method="post" action="http://localhost:8080/reviews/<%=moviereview.id%>?_method=Delete">
+             <button>Delete</button>
+           </form>
+        </div> 
+    <%}%>   
+    <br>
+    <br> 
+    <a href="http://localhost:8080/reviews/new">Create new</a>
+</body>
+</html>
